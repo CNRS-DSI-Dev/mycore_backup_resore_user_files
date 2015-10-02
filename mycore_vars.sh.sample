@@ -1,0 +1,40 @@
+#!/bin/bash
+
+## VARIABLES
+
+# Destinataires (séparer par un espace si besoin de valoriser plusieurs email)
+admins="XXXX"
+# Adresse expediteur pour l'envoi aux admins
+expadd="XXXX"
+# Nom expediteur
+expname="XXXX"
+# Sujet du mail
+SUBJECT='My CoRe - Restauration de fichiers'
+# Instance BDD
+instance="XXXX"
+# Utilisateur BDD
+db_user="XXXX"
+# Mot de passe BDD
+db_passwd="XXXX"
+# Adresse du serveur BDD
+db_host="localhost"
+# Port du serveur BDD
+db_port="3306"
+# Url du Service
+service="XXXX"
+# Chemin de Owncloud
+ownclouddatadir="XXXX"
+
+TMP=/tmp
+
+# repertoire temporaire pour la création des listes utilisateurs
+listeusersdirectory=${TMP}
+# fichier temporaire pour le corps du mail
+temporarymailfile=${TMP}/mail.txt
+# pattern à ne pas sauvegarder
+patterntoignoreinownclouddatadir="total|cache|index.html|mount.json|owncloud.log|\/$"
+# destinataire
+mailto='XXXX'
+# expéditeur pour les utilisateurs
+mailfrom='XXXX'
+
