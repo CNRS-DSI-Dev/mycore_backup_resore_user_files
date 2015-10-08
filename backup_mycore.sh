@@ -48,6 +48,33 @@ mailsubject='My CoRe - Sauvegarde'
 liste=$1
 # commande exécutée
 command=$0
+LOCK_FILE="backup_$1\.lock"
+
+
+#
+# Functions
+#
+        function removeLock {
+                debug=`/bin/rm ${LOCK_FILE} 2>&1`
+                if [[ $? -ge "1" ]]
+                then
+                        # TODO Cmd fail + log
+                        writeLog "FAIL removeLock : $debug"
+                        exit 2
+                fi
+
+        }
+
+#
+# Check du verrou
+#
+        if [[ -f ${LOCK_FILE} ]]
+        then
+                exit
+        else
+                touch ${LOCK_FILE}
+        fi
+
 
 # CONTENU
 
@@ -97,5 +124,6 @@ then
 echo "usage - $command [1, 2 ou 3]"
 fi
 
+removeLock
 echo "fin de la sauvegarde $liste" >> $temporarymailfile
 mail -s "$mailsubject" -b $admins -r "$mailfrom" -Sreplyto=$expadd $mailto < $temporarymailfile
