@@ -125,5 +125,5 @@ echo "usage - $command [1, 2 ou 3]"
 fi
 
 removeLock
-echo "fin de la sauvegarde $liste" >> $temporarymailfile
+echo "Fin de la sauvegarde $liste" >> $temporarymailfile
 mail -s "$mailsubject" -b $admins -r "$mailfrom" -Sreplyto=$expadd $mailto < $temporarymailfile

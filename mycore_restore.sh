@@ -28,7 +28,7 @@ do
 	if [ `date -d "$date_30min" +%s` -ge `date -d "$date_request" +%s` ]
 	then
 		# Met la date au format PITDate
-		date=`date --date "$version days ago" +%d.%m.%Y`
+		date=`date --date "$version days ago" +%m/%d/%Y`
 		# Met en forme le chemin avec les données récupérées
 		cheminresto="$ownclouddatadir$uid/files$path"
 		# Passe le status en "en cours de traitement"
@@ -38,10 +38,8 @@ do
 		# Vérifie le code d'erreur
 		if [[ $? = "0" ]]
 		then
-		# Passe le status en "traité"
-		echo "UPDATE oc_user_files_restore SET status = '3' WHERE id = '$tableid';"| mysql -h $db_host -u $db_user -P $db_port -p$db_passwd $instance
-		# Affiche la date de fin en base
-		echo "UPDATE oc_user_files_restore SET date_end = '`date +\"%F %T\" --utc`' WHERE id = '$tableid';"| mysql -h $db_host -u $db_user -P $db_port -p$db_passwd $instance
+		# Passe le status en "traité et renseigne la date de fin en bdd"
+		echo "UPDATE oc_user_files_restore SET status = '3' , date_end = '`date +\"%F %T\" --utc`' WHERE id = '$tableid';"| mysql -h $db_host -u $db_user -P $db_port -p$db_passwd $instance
 		echo "Restauration de $path de l'utilisateur $uid terminée" >> mail_content
 		printf "\n" >> mail_content
 		printf "Bonjour,\n\nLa restauration de $path est terminée\n\n--\nService My CoRe\nMy CoRe, partage et nomadisme." > mail_user
