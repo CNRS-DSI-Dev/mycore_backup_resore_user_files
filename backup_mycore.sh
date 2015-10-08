@@ -90,7 +90,7 @@ then
 	for i in $( < $listeusersdirectory/users1.txt)
 		do
 		echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
-		printf "Sauvegarde de $i\n" >> $temporarymailfile
+		printf "Sauvegarde de $i\n." >> $temporarymailfile
 #		/usr/bin/dsmc inc "$i/files/" -subdir=yes
 		done
 fi
@@ -102,7 +102,7 @@ then
         for i in $( < $listeusersdirectory/users2.txt)
                 do
                 echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
-                printf "Sauvegarde de $i\n" >> $temporarymailfile
+                printf "Sauvegarde de $i\n." >> $temporarymailfile
 #               /usr/bin/dsmc inc "$i/files/" -subdir=yes
                 done
 fi
@@ -114,7 +114,7 @@ then
         for i in $( < $listeusersdirectory/users3.txt)
                 do
                 echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
-                printf "Sauvegarde de $i\n" >> $temporarymailfile
+                printf "Sauvegarde de $i\n." >> $temporarymailfile
 #               /usr/bin/dsmc inc "$i/files/" -subdir=yes
                 done
 fi
