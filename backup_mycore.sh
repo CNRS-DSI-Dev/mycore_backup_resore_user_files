@@ -8,7 +8,6 @@
 # Le dossier de quarantaine doit être configuré pour une purge, typiquement à +30jours
 
 ## VARIABLES
-# directory=repertoire des données MyCore (partagé entre les différents serveurs Apache/ownCloud et la(les) clamAV
 # quarantainedirectory=répertoire de quarantaine
 # listeusersdirectory=fichiers qui contient la liste des utilisateurs présents dans sdirectory
 # temporarymailfile=fichier de travail pour la construction du email
