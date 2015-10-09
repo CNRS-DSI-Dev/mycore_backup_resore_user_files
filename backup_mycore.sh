@@ -62,9 +62,9 @@ then
 	#On sauvegarde user par user 
 	for i in $( < $listeusersdirectory/users1.txt)
 		do
-		echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
+		echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
 		printf "Sauvegarde de $i.\n" >> $temporarymailfile
-#		/usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes
 		done
 fi
 if [[ $liste == "2" ]]
@@ -74,9 +74,9 @@ then
         #On sauvegarde user par user
         for i in $( < $listeusersdirectory/users2.txt)
                 do
-                echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
+                echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
                 printf "Sauvegarde de $i.\n" >> $temporarymailfile
-#               /usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes
                 done
 fi
 if [[ $liste == "3" ]]
@@ -86,9 +86,9 @@ then
         #On sauvegarde user par user
         for i in $( < $listeusersdirectory/users3.txt)
                 do
-                echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes"
+                echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
                 printf "Sauvegarde de $i.\n" >> $temporarymailfile
-#               /usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes
                 done
 fi
 
