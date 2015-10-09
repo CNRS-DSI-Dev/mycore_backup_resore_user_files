@@ -4,8 +4,7 @@
 # Ce script est un exemple de faisabilité pour une demande du CNRS dans le cadre du projet My CoRe. Il doit être adapté et configuré pour une utilisation en production par le prestataire, et ne doit pas être considéré comme utilisable tel quel sans expertise préalable dessus
 
 ## DESCRIPTION
-# Script dedié à scanner le file system de données d'ownCloud via clamAV. Il envoie un email à une adresse d'administration ainsi qu'à l'utilisateur (si l'uid de ce dernier à la forme d'un email)
-# Le dossier de quarantaine doit être configuré pour une purge, typiquement à +30jours
+# Le script permet de sauvegarder les dossiers utlisateurs via un client Tivoli.
 
 ## PREREQUIS
 # Installer Tivoli dsmc
