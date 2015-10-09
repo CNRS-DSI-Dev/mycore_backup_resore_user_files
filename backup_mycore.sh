@@ -16,7 +16,7 @@
 # chargement des variables
 . ./mycore_vars.sh
 # Sujet du mail
-mailsubject='My CoRe - Sauvegarde'
+mailsubject="My CoRe - Sauvegarde $1"
 # numéro de liste {1|2|3}
 liste=$1
 # commande exécutée
@@ -98,5 +98,5 @@ echo "usage - $command [1, 2 ou 3]"
 fi
 
 removeLock
-echo "\nFin de la sauvegarde $liste" >> $temporarymailfile
+echo "Fin de la sauvegarde $liste" >> $temporarymailfile
 mail -s "$mailsubject" -b $admins -r "$mailfrom" -Sreplyto=$expadd $mailto < $temporarymailfile
