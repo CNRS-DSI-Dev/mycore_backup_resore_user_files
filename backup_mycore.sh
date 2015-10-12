@@ -21,7 +21,7 @@ liste=$1
 # commande exécutée
 command=$0
 LOCK_FILE="backup_$1.lock"
-
+LOG_FILE="`date +%Y%m%d`_backup_$1.log"
 
 #
 # Functions
@@ -63,7 +63,7 @@ then
 		do
 		echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
 		printf "Sauvegarde de $i.\n" >> $temporarymailfile
-		/usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes >> $LOG_FILE
 		done
 fi
 if [[ $liste == "2" ]]
@@ -75,7 +75,7 @@ then
                 do
                 echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
                 printf "Sauvegarde de $i.\n" >> $temporarymailfile
-		/usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes >> $LOG_FILE
                 done
 fi
 if [[ $liste == "3" ]]
@@ -87,7 +87,7 @@ then
                 do
                 echo "/usr/bin/dsmc inc \"$i/files/\" -subdir=yes" >> $LOCK_FILE
                 printf "Sauvegarde de $i.\n" >> $temporarymailfile
-		/usr/bin/dsmc inc "$i/files/" -subdir=yes
+		/usr/bin/dsmc inc "$i/files/" -subdir=yes >> $LOG_FILE
                 done
 fi
 
