@@ -13,14 +13,14 @@
 # Créé par jerome.jacques@ext.dsi.cnrs.fr le 01/10/2015
 
 # chargement des variables
-. /exploit/mycore_vars.sh
+. /XXX/mycore_vars.sh
 # Sujet du mail
 mailsubject="My CoRe - Sauvegarde $1"
 
 # commande exécutée
 command=$0
-LOCK_FILE="/exploit/tmp/backup_full.lock"
-LOG_FILE="/exploit/tmp/`date +%Y%m%d`_backup_full.log"
+LOCK_FILE="/XXX/tmp/backup_full.lock"
+LOG_FILE="/XXX/tmp/`date +%Y%m%d`_backup_full.log"
 
 
 #
