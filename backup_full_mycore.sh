@@ -15,7 +15,7 @@
 # chargement des variables
 . /XXX/mycore_vars.sh
 # Sujet du mail
-mailsubject="My CoRe - Sauvegarde $1"
+mailsubject="My CoRe - Sauvegarde"
 
 # commande exécutée
 command=$0
