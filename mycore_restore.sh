@@ -9,6 +9,9 @@
 # le client mysql doit être installé
 # le script doit avoir accès à la base de donnée
 
+## CREATION/MISE A JOUR/SUVI
+# Créé par jerome.jacques@ext.dsi.cnrs.fr le 01/10/2015
+
 
 ## VARIABLES
 . ./mycore_vars.sh
