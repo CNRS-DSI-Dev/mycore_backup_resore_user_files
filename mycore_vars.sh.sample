@@ -17,20 +17,27 @@ db_user="XXXX"
 # Mot de passe BDD
 db_passwd="XXXX"
 # Adresse du serveur BDD
-db_host="localhost"
+db_host="XXXX"
 # Port du serveur BDD
-db_port="3306"
+db_port="XXXX"
 # Url du Service
 service="XXXX"
 # Chemin de Owncloud
 ownclouddatadir="XXXX"
+# Url du Service
+service="XXXX"
+# Chemin de Owncloud
+ownclouddatadir=""
+# Chemin des logs
+LOG_DIR=""
+tpsreflexion=""
 
 TMP=/tmp
 
 # repertoire temporaire pour la création des listes utilisateurs
 listeusersdirectory=${TMP}
 # fichier temporaire pour le corps du mail
-temporarymailfile=${TMP}/mail.txt
+temporarymailfile=${TMP}/mail$1.txt
 # pattern à ne pas sauvegarder
 patterntoignoreinownclouddatadir="total|cache|index.html|mount.json|owncloud.log|\/$"
 # destinataire

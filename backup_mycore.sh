@@ -20,8 +20,8 @@ mailsubject="My CoRe - Sauvegarde $1"
 liste=$1
 # commande exécutée
 command=$0
-LOCK_FILE="backup_$1.lock"
-LOG_FILE="`date +%Y%m%d`_backup_$1.log"
+LOCK_FILE="$TMP/backup_$1.lock"
+LOG_FILE="$LOG_DIR/`date +%Y%m%d`_backup_$1.log"
 
 #
 # Functions
